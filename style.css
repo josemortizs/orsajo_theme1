@@ -1,0 +1,185 @@
+/*
+Theme Name: Orsajo_Theme1
+Theme URI: https://www.ortizsanchezdev.es
+Author: José Manuel Ortiz Sánchez
+Author URI: https://www.ortizsanchezdev.es
+Description: Tema de carácter general, normalmente será usado para blog´s personales. 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Orsajo_Theme1
+Tags: two-columns, right-sidebar, down-sidebar, bootstrap, responsive
+This theme, like WordPress, is licensed under the GPL.
+Date: 03/07/2019
+*/
+
+/* Reglas globales */
+
+h2 {
+    color: #a12c63;
+}
+
+a {
+    color: #a12c63;
+}
+
+a:hover {
+    color: black;
+}
+
+.btn-primary {
+    background-color: #a12c63;
+    border-color: black;
+}
+
+.btn-primary:hover {
+    background-color: black;
+}
+
+.page-item.active .page-link {
+    background-color: #a12c63;
+    border-color: black;
+    cursor: pointer;
+    user-select: none; 
+}
+
+.page-item.active .page-link:hover {
+    background-color: black;
+}
+
+.card-trabajos {
+    float: left;
+    width: 90%;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.opacity-70 {
+    opacity: 0.7; 
+}
+
+.titulo-trabajos {
+    margin-top: -10%;
+}
+
+.datos-adicionales-label {
+    float: left;
+    width: 25%;
+}
+
+.datos-adicionales {
+    float: left;
+    width: 75%;
+}
+
+/* Sección HEADER */
+
+/* Cambiar el color de fondo de bg-dark */
+.bg-dark {
+    background-color: black !important;
+}
+
+.bg-dark .dropdown-menu {
+    background-color: black !important;  
+}
+
+/* Redondear el botón para desplegar menús en mobile */
+.navbar-dark .navbar-toggler {
+    padding: 14px 14px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.navbar-dark .navbar-toggler:hover {
+    border-color: white;
+}
+
+/* !Sección HEADER */
+
+/* Sección FOOTER */
+
+footer hr {
+    border-color: white;
+    width: 70%;
+}
+
+/* Imprime, de forma redundante, la palabra Buscar sobre el recuadro de búsqueda */
+.screen-reader-text {
+    display: none;
+}
+
+/* calendar widget */
+.widget_calendar {float: left;width: 100%;}
+#wp-calendar {width: 100%; }
+#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { padding-bottom: 10px; }
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tbody .pad { background: none; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+
+/* Área de Widget */
+.widg-down {
+    float: left;
+    width: 33%;
+}
+
+/* Normas relativas sólo a dispositivos móviles */
+@media (min-width: 320px) and (max-width: 413px) {
+
+}
+
+@media (min-width: 414px) and (max-width: 575px) {
+
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .card-img-top {
+        height: 150px;
+    }
+
+    a.btn.btn-primary.w-75.p-3.text-white {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .card-img-top {
+        height: 185px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .card-img-top {
+        height: 264px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .card-trabajos {
+        float: left;
+        width: 48%;
+        margin-top: 1%;
+        margin-left: 2%;
+    }
+}
+
+@media (min-width: 1200px) {  
+
+    .card-img-top {
+        height: 325px;
+    }
+
+}
+
+@media (max-width: 575px) {  
+
+    .img-trabajos {
+        height: 200px;
+    }
+
+}
