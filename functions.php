@@ -1,13 +1,27 @@
 <?php
+    /*
+    ** Archivo: functions.php
+    ** Tema: Orsajo_theme1
+    ** Autor: José Manuel Ortiz Sánchez
+    ** Descripción: Definimos funciones que usará nuestro tema, 
+    ** habilitamos opciones, definimos qué librerías va a cargar, etc.
+    */
+    
+    /*
+    ** Clase: WP_Bootstrap_Navwalker
+    ** Contributors: https://github.com/wp-bootstrap/wp-bootstrap-navwalker/graphs/contributors
+    ** Clase creada para extender la funcionalidad de los menús de WordPress aplicando
+    ** funcionalidades y diseños de Bootstrap.
+    ** Desde: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+    */
 
-    // Register Custom Navigation Walker
-    // Desde: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
     require_once get_template_directory() . '/template-parts/navbar.php';
 
 
     /*
     ** Agregamos las hojas de estilo y ficheros JavaScript que usará nuestro tema
     */
+
     function orsajo_theme1_agregar_css_js() 
     {
         wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css');
@@ -24,6 +38,7 @@
     /*
     ** Agregamos las hojas de estilo y ficheros JavaScript que queramos usar en el panel de administración WordPress
     */
+
     function orsajo_theme1_agregar_css_js_admin() 
     {
         wp_enqueue_style('css-admin', get_template_directory_uri().'/css/css-admin.css');
@@ -32,7 +47,10 @@
     add_action('admin_enqueue_scripts', 'orsajo_theme1_agregar_css_js_admin');
 
 
-    // Habilitar la opción de logo:
+    /*
+    ** Habilitamos la opción de agregar un logo en nuestro Theme
+    ** Esto hará que podamos agregarlo desde el menú de Apariencia
+    */
 
     function orsajo_theme1_habilitar_logo() {
         
@@ -48,11 +66,15 @@
 
     add_action( 'after_setup_theme', 'orsajo_theme1_habilitar_logo' );
 
-    //
+
+    /*
+    ** Habilitamos la opción de agregar imágenes destacadas a nuestros
+    ** post y páginas. 
+    */
 
     function orsajo_theme1_setup() 
     {
-        // Permitir que el tema soporte imágenes destacadas:
+
         if ( function_exists( 'add_theme_support' ) ) 
         {
             add_theme_support( 'post-thumbnails' );
@@ -64,7 +86,12 @@
 
     add_action( 'after_setup_theme', 'orsajo_theme1_setup' );
 
-    // Agregar Sidebar
+
+    /*
+    ** Habilitamos las áreas de Widgets.
+    ** En nuestro tema: un área de widget que se mostraría a la derecha
+    ** y otro en la parte inferior. Los dos son opcionales.
+    */
 
     function orsajo_theme1_widgets()
     {
@@ -91,7 +118,13 @@
 
     add_action('widgets_init', 'orsajo_theme1_widgets');
 
-    // Registrar menús
+
+    /*
+    ** Habilitamos la opción de menús para nuestro tema.
+    ** Creamos el 'Menú Superior' para que podamos gestionar
+    ** desde el Panel de Administración qué enlaces debe mostrar
+    ** nuestra área de navegación.
+    */
 
     function orsajo_theme1_register_my_menus() {
         register_nav_menus(
@@ -103,7 +136,14 @@
     add_action( 'init', 'orsajo_theme1_register_my_menus' );
 
 
-    // Agregar modificación de Footer mediante Apariencia / Personalizar
+    /*
+    ** Mediante esta función creamos una caja de texto donde el usuario
+    ** de nuestro tema podrá modificar el foooter de su sitio web. 
+    ** Se crea, en el menú de Apariencia, una nueva pestaña que, a su vez, 
+    ** agrega un text-area donde agregar el mensaje, título, etc, que 
+    ** el cliente quiera mostrar.
+    */
+
     function orsajo_theme1_customize_register( $wp_customize ) {
         
         // Agregamos el panel correspondiente
@@ -138,7 +178,14 @@
     }
     add_action( 'customize_register', 'orsajo_theme1_customize_register' );
 
-    // Agregamos y registramos los campos personalizados para la sección de Trabajos
+
+    /*
+    ** Sección Trabajos:
+    ** orsajo_theme1_cp_trabajos() - Crea el menú, la pestaña dentro del Administrador de WordPress
+    ** orsajo_theme1_add_metabox() - Crea la "caja" donde se almacenarán los campos de texto adicionales (URL y Lenguajes)
+    ** orsajo_theme1_callback_trabajos($post) - Función que agrega los campos de texto para su inserción o modificación.
+    ** orsajo_theme1_save_info_trabajos($post_id) - Función que se llama al guardar un nuevo trabajo o modificar uno existente.
+    */
 
     function orsajo_theme1_cp_trabajos() {
 
@@ -183,7 +230,6 @@
         $url = isset( $values['orsajo_theme1_url'] ) ? esc_attr( $values['orsajo_theme1_url'][0] ) : '';
         $leng = isset( $values['orsajo_theme1_leng'] ) ? esc_attr( $values['orsajo_theme1_leng'][0] ) : '';
      
-        // We'll use this nonce field later on when saving.  
         wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
 
         ?>
