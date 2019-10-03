@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** single.php
+    ** Plantilla que se usa para mostrar los post individualmente. Cuando tenemos una lista de entradas y pulsamos sobre
+    ** la que queremos visualizar es ésta la página que se muestra.
+    */
+?>
+
 <?php get_header(); ?>
 
         <div class="row">

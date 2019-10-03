@@ -253,10 +253,11 @@
 
         if( !current_user_can( 'edit_post' ) ) return;  
 
+        // Defino la lista de elementos HTML permitidos y lo paso como parámetro a wp_kses();
         $allowed = array(   
-            'a' => array( // on allow a tags  
-                'href' => array() // and those anchors can only have href attribute  
-            )  
+            'a' => array( 
+                'href' => array() 
+            ) 
         );
 
         if( isset( $_POST['orsajo_theme1_url'] ) )  

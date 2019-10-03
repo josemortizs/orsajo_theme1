@@ -1,6 +1,9 @@
 <?php
     /*
     ** Template Name: Con Sidebar (Página)
+    ** Description: Modelo de página con Sidebar, si el usuario tiene activados alguno de los sidebar
+    ** del Tema, inferior o derecha, y quiere que alguna de sus páginas se muestren con dichos sidebar
+    ** ha de usar este "template" seleccionando "Con Sidebar (Página)" en la opción de "Plantilla".
     */
 ?>
 
@@ -60,5 +63,7 @@
         <?php get_sidebar('down'); ?>
         <!-- ASIDE ABAJO: Bajo entradas -->
     </div>
+
+    </div><!-- Este DIV se abre en el header -->
 
 <?php get_footer(); ?>

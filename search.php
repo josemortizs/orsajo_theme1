@@ -1,3 +1,10 @@
+<?php
+    /*
+    ** search.php
+    ** Cuando realizas una búsqueda es esta página la que muestra el resultado
+    */
+?>
+
 <?php get_header(); ?>
 
         <div class="row">

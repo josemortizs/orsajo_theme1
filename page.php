@@ -1,3 +1,13 @@
+<?php
+    /*
+    ** page.php
+    ** Plantilla que se usa para mostrar el contenido de las páginas.
+    ** Modelo estándar, si el usuario quiere variar cómo se muestra alguna información 
+    ** relativa a las páginas, agregar alguna reglas CSS, etc, es aquí donde debe hacerlo
+    */
+?>
+
+
 <?php get_header(); ?>
 
         <div class="row">

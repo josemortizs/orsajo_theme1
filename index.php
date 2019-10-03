@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** index.php
+    ** 
+    ** 
+    */
+?>
+
 <?php get_header(); ?>
 
         <div class="row">
