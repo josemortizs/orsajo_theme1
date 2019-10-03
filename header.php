@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** header.php
+    ** Esta página define todo lo que se mostará en la sección 
+    ** Header de todas las páginas, post, trabajos, etc.
+    */
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>> 
   <head>

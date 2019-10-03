@@ -1,8 +1,9 @@
 <?php
     /*
     ** index.php
-    ** 
-    ** 
+    ** Esta página define los datos y el diseño que muestran, por omisión,
+    ** el listado de POST. Muestra las últimas entradas con la información
+    ** contenida en éstas.
     */
 ?>
 

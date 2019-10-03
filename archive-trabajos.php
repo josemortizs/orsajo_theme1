@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** archive-trabajos.php
+    ** Página para mostrar los post-type "trabajos". Similar a index.php solo que
+    ** en este caso muestra un listado de trabajos.
+    */
+?>
+
 <?php get_header(); ?>
 
         <div class="row">

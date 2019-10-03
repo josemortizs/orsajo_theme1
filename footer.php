@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** footer.php
+    ** Esta página define todo lo que se mostará en la sección 
+    ** Footer de todas las páginas, post, trabajos, etc.
+    */
+?>
+
     <div class="clearfix"></div>
     <footer class="container-fluid py-4 text-center text-light bg-dark">
       <hr>

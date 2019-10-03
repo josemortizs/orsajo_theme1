@@ -1,3 +1,11 @@
+<?php
+    /*
+    ** comments.php
+    ** Desde esta página se define el diseño de los comentarios, 
+    ** tanto en comentarios como en páginas.
+    */
+?>
+
 <h5>Comentarios: <?php comments_number( '0', '1', '%' ); ?></h5>
 <hr>
 
