@@ -3,7 +3,7 @@ Theme Name: Orsajo_Theme1
 Theme URI: https://www.ortizsanchezdev.es
 Author: José Manuel Ortiz Sánchez
 Author URI: https://www.ortizsanchezdev.es
-Description: Tema de carácter general, normalmente será usado para blog´s personales. 
+Description: Tema de carácter general, normalmente será usado para blog´s personales. Con opción de publicar trabajos realizados.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -103,7 +103,7 @@ footer hr {
     width: 70%;
 }
 
-/* Imprime, de forma redundante, la palabra Buscar sobre el recuadro de búsqueda */
+/* Evita que se imprima, de forma redundante, la palabra Buscar sobre el recuadro de búsqueda */
 .screen-reader-text {
     display: none;
 }
