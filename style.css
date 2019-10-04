@@ -72,6 +72,11 @@ a:hover {
     width: 75%;
 }
 
+.titulo-blog,
+.descripcion-blog{
+    text-align: center;
+}
+
 /* Sección HEADER */
 
 /* Cambiar el color de fondo de bg-dark */

@@ -18,6 +18,8 @@
                 <div class="col-lg-12">
             <?php endif; ?>
 
+            <h2 class="titulo-blog mt-4"><?php echo get_bloginfo('name'); ?></h2>
+            <h5 class="descripcion-blog"><?php echo get_bloginfo('description'); ?></h5>
 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <!-- ENTRADA -->
