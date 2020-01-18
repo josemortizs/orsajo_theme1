@@ -1,7 +1,7 @@
 <?php
     /*
     ** footer-404.php
-    ** Esta página define todo lo que se mostará en la sección 
+    ** Esta página define todo lo que se mostrará en la sección 
     ** Footer de la página 404.php
     */
 ?>

@@ -1,7 +1,7 @@
 <?php
     /*
     ** footer.php
-    ** Esta página define todo lo que se mostará en la sección 
+    ** Esta página define todo lo que se mostrará en la sección 
     ** Footer de todas las páginas, post, trabajos, etc.
     */
 ?>

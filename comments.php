@@ -2,7 +2,7 @@
     /*
     ** comments.php
     ** Desde esta página se define el diseño de los comentarios, 
-    ** tanto en comentarios como en páginas.
+    ** tanto en entradas como en páginas.
     */
 ?>
 
