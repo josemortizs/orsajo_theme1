@@ -268,7 +268,23 @@
 
     }
 
-    add_action('save_post', 'orsajo_theme1_save_info_trabajos')
+    add_action('save_post', 'orsajo_theme1_save_info_trabajos');
 
+
+    /*
+    ** Ejemplo del filtro the_content
+    */
+
+    function orsajo_theme1_make_content_social($content) {
+        if (is_singular() && is_main_query()) {
+            $social_content = "<br /><a href='https://twitter.com/josemortizs'>Mi Twitter</a>";
+
+            $content .= $social_content;
+        }
+        
+        return $content;
+    }
+
+    add_filter( 'the_content', 'orsajo_theme1_make_content_social');
 
 ?>
