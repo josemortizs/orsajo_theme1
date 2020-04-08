@@ -287,4 +287,59 @@
 
     add_filter( 'the_content', 'orsajo_theme1_make_content_social');
 
+    /*
+    ** Gererar un enlace para borrar una publicación
+    */
+
+    function orsajo_theme1_generate_delete_link($content) {
+        if (is_single() && in_the_loop() && is_main_query()) {
+            $url = add_query_arg(
+                [
+                    'action' => 'orsajo_theme1_frontend_delete',
+                    'post' => get_the_ID(),
+                ],
+                home_url()
+            );
+            return $content . ' <a href="' . esc_url($url) . '">' . esc_html__( 'Delete Post', 'Orsajo_Theme1') . '</a>';
+        }
+        return $content;
+    }
+
+    function orsajo_theme1_delete_post() {
+        
+        if(isset($_GET['post']) && $_GET['action'] === 'orsajo_theme1_frontend_delete') {
+            $post_id = (isset($_GET['post'])) ? ($_GET['post']) : (null);
+        }
+
+        $post = get_post((int) $post_id);
+
+        if(empty($post)) return;
+
+        wp_trash_post( $post_id );
+
+        $redirect = admin_url('edit.php');
+        wp_safe_redirect($redirect);
+
+        die;
+
+    }
+
+    if(current_user_can( 'edit_others_posts')) {
+        add_filter( 'the_content', 'orsajo_theme1_generate_delete_link');
+        add_action('init', 'orsajo_theme1_delete_post');
+    }
+
+
+
+    /*
+    ** Generar un nuevo rol y agregarle capacidades
+    */
+
+    // function orsajo_theme1_add_theme_caps() {
+    //     $role = get_role( 'prueba_usuario' );
+    //     $role->add_cap( 'list_users' );
+    // }
+
+    // add_action( 'admin_init', 'orsajo_theme1_add_theme_caps');
+
 ?>
