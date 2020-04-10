@@ -297,6 +297,7 @@
                 [
                     'action' => 'orsajo_theme1_frontend_delete',
                     'post' => get_the_ID(),
+                    'nonce' => wp_create_nonce('orsajo_theme1_frontend_delete'),
                 ],
                 home_url()
             );
