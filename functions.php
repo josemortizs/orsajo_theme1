@@ -26,10 +26,12 @@
     {
         wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css');
         wp_enqueue_style('style', get_stylesheet_uri());
+        wp_enqueue_style('styles-frontpage', get_template_directory_uri().'/css/styles-frontpage.css');
 
         wp_enqueue_script('popper', get_template_directory_uri().'/js/popper.min.js', array('jquery'), '1.14', true);
         wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js', array('popper'), '4.3', true);
         wp_enqueue_script('app', get_template_directory_uri().'/js/app.js', array('bootstrap-js'), '1.0', true);
+        wp_enqueue_script('scripts-frontpage', get_template_directory_uri().'/js/scripts-frontpage.js', array('bootstrap-js'), '1.0', true);
     }
 
     add_action('wp_enqueue_scripts', 'orsajo_theme1_agregar_css_js');
@@ -175,6 +177,140 @@
             'type' => 'textarea',
         ));
 
+        /*
+        ** Sección Front Page
+        */
+
+        $wp_customize->add_panel('panel-sections', array(
+            'title'          =>  __( 'FrontPage', 'textdomain' ),
+            'description'    => __( 'Panel relativo a la web inicial', 'textdomain' ),   
+            'priority'       => 160,
+            'capability'     => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_section('section-front-page-1', array(
+            'title' => __( 'Personalizar sección: datos personales', 'textdomain' ),
+            'panel' => 'panel-sections',
+            'priority' => 20,
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_setting( 'section-front-page-photo', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control( 
+            new WP_Customize_Image_Control( $wp_customize, 'section-front-page-photo', array(
+                'label' => 'Agrega, o modifica, la fotografía inicial',
+                'settings'  => 'section-front-page-photo',
+                'section'   => 'section-front-page-1',
+                'priority' => 1
+        ) ));
+
+        $wp_customize->add_setting('section-front-page-nombre', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-nombre', array(
+            'label' => __( 'Agrega, o modifica, tu nombre', 'textdomain' ),
+            'section' => 'section-front-page-1',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-apellidos', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-apellidos', array(
+            'label' => __( 'Agrega, o modifica, tus apellidos', 'textdomain' ),
+            'section' => 'section-front-page-1',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-contacto', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-contacto', array(
+            'label' => __( 'Agrega, o modifica, tus datos de contacto', 'textdomain' ),
+            'section' => 'section-front-page-1',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-email', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-email', array(
+            'label' => __( 'Agrega, o modifica, tus datos de contacto', 'textdomain' ),
+            'section' => 'section-front-page-1',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-description', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-description', array(
+            'label' => __( 'Agrega, o modifica, tu descripción', 'textdomain' ),
+            'section' => 'section-front-page-1',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_section('section-front-page-links', array(
+            'title' => __( 'Personalizar sección: Links', 'textdomain' ),
+            'panel' => 'panel-sections',
+            'priority' => 20,
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_setting('section-front-page-links-twitter', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-links-twitter', array(
+            'label' => __( 'Twitter', 'textdomain' ),
+            'section' => 'section-front-page-links',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-links-linkdin', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-links-linkdin', array(
+            'label' => __( 'LinkdIn', 'textdomain' ),
+            'section' => 'section-front-page-links',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('section-front-page-links-github', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control('section-front-page-links-github', array(
+            'label' => __( 'GitHub', 'textdomain' ),
+            'section' => 'section-front-page-links',
+            'priority' => 2,
+            'type' => 'text',
+        ));
+
     }
     add_action( 'customize_register', 'orsajo_theme1_customize_register' );
 
@@ -268,7 +404,5 @@
 
     }
 
-    add_action('save_post', 'orsajo_theme1_save_info_trabajos')
-
-
+    add_action('save_post', 'orsajo_theme1_save_info_trabajos');
 ?>
